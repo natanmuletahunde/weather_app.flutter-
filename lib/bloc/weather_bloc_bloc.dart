@@ -11,16 +11,10 @@ class WeatherBlocBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
       emit(WeatherBlocLoading());
       try {
         WeatherFactory wf = WeatherFactory('API_KEY', language: Language.ENGLISH);
-
-        // Get the current position
-        Position position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.high,
-        );
-
         // Fetch weather using latitude and longitude
         Weather weather = await wf.currentWeatherByLocation(
-          position.latitude, 
-          position.longitude, // Fixed typo here
+          event.position.latitude, 
+          event.position.longitude, // Fixed typo here
         );
          print(weather);
         emit(WeatherBlocSuccess(weather));
