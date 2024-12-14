@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart'; // Make sure you have the 'intl' package in your pubspec.yaml
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -125,19 +126,19 @@ class HomeScreen extends StatelessWidget {
                               scale: 8,
                             ),
                             const SizedBox(width: 5),
-                            const Column(
+                            Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Sunrise',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w300),
                                 ),
-                                SizedBox(height: 3),
+                                const SizedBox(height: 3),
                                 Text(
-                                  '5:34 am',
-                                  style: TextStyle(
+                                  DateFormat().add_jm().format(DateTime.parse("2024-12-13 05:34:00")), // Replace with dynamic value
+                                  style: const TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700),
                                 ),
@@ -152,19 +153,19 @@ class HomeScreen extends StatelessWidget {
                               scale: 8,
                             ),
                             const SizedBox(width: 5),
-                            const Column(
+                            Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Sunset',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w300),
                                 ),
-                                SizedBox(height: 3),
+                                const SizedBox(height: 3),
                                 Text(
-                                  '6:45 pm',
-                                  style: TextStyle(
+                                  DateFormat().add_jm().format(DateTime.parse("2024-12-13 18:45:00")), // Replace with dynamic value
+                                  style: const TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700),
                                 ),
@@ -190,19 +191,19 @@ class HomeScreen extends StatelessWidget {
                               scale: 8,
                             ),
                             const SizedBox(width: 5),
-                            const Column(
+                           const  Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                               Text(
                                   'Temp Max',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w300),
                                 ),
-                                SizedBox(height: 3),
+                                 SizedBox(height: 3),
                                 Text(
-                                  '12°C',
-                                  style: TextStyle(
+                                  '12°C', // Replace with dynamic value
+                                  style: const TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700),
                                 ),
@@ -217,19 +218,19 @@ class HomeScreen extends StatelessWidget {
                               scale: 8,
                             ),
                             const SizedBox(width: 5),
-                            const Column(
+                           const  Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Temp Min',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w300),
                                 ),
-                                SizedBox(height: 3),
+                                 SizedBox(height: 3),
                                 Text(
-                                  '8°C',
-                                  style: TextStyle(
+                                  '8°C', // Replace with dynamic value
+                                  style:  TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700),
                                 ),
