@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-
-part 'weather_bloc_event.dart';
 part 'weather_bloc_state.dart';
 
 class WeatherBlocBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
@@ -15,4 +13,7 @@ class WeatherBlocBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
   ) async* {
     // TODO: implement mapEventToState
   }
+}
+
+class WeatherBlocEvent {
 }
