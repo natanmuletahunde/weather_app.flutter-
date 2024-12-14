@@ -90,30 +90,68 @@ class HomeScreen extends StatelessWidget {
                       child: Text(
                         '21°C',
                         style: TextStyle(
-                            color:Colors.white,
+                            color: Colors.white,
                             fontSize: 55,
                             fontWeight: FontWeight.w600),
                       ),
                     ),
-                     const Center(
+                    const Center(
                       child: Text(
                         'ThunderStorm',
                         style: TextStyle(
-                            color:Colors.white,
+                            color: Colors.white,
                             fontSize: 25,
                             fontWeight: FontWeight.w300),
                       ),
                     ),
-                     const Center(
+                    const Center(
                       child: Text(
                         'Friday 16. 09.41am',
                         style: TextStyle(
-                            color:Colors.white,
+                            color: Colors.white,
                             fontSize: 16,
                             fontWeight: FontWeight.w300),
                       ),
                     ),
-                    const SizedBox(height: 30,)
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/11.png',
+                              scale: 8,
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            const Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Sunrise',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                                SizedBox(
+                                  height: 3,
+                                ),
+                                Text(
+                                  '5:34 am',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w700),
+                                )
+                              ],
+                            )
+                          ],
+                        )
+                      ],
+                    )
                   ],
                 ),
               )
