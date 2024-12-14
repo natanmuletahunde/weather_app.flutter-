@@ -1,5 +1,6 @@
-import 'package:equatable/equatable.dart'; // Added the missing import
-sealed class WeatherBlocEvent extends Equatable {
+import 'package:equatable/equatable.dart';
+ // Added the missing import
+ class WeatherBlocEvent extends Equatable {
   const WeatherBlocEvent();
 
   @override

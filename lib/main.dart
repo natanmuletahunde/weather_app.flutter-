@@ -1,31 +1,54 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:weatherapp/bloc/weather_bloc_bloc.dart';
 import 'package:weatherapp/bloc/weather_bloc_event.dart';
 import 'package:weatherapp/screens/home_screen.dart';
-import 'package:geolocator/geolocator.dart';
 
-void main() {
-  runApp(const MyApp());
+class FetchWeather extends WeatherBlocEvent {
+  final Position position;
+
+  const FetchWeather(this.position);
+
+  @override
+  List<Object> get props => [position];
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+void main() {
+  runApp(const MainApp());
+}
+
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BlocProvider<WeatherBlocBloc>(
-        create: (context) => WeatherBlocBloc()..add(FetchWeather()),
-        child: const HomeScreen(),
+      home: FutureBuilder(
+        future: _determinePosition(),
+        builder: (context, snap) {
+          if (snap.hasData) {
+            return BlocProvider<WeatherBlocBloc>(
+              create: (context) => WeatherBlocBloc()..add(
+                FetchWeather(snap.data as Position)
+              ),
+              child: const HomeScreen(),
+            );
+          } else {
+            return const Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
+          }
+        },
       ),
     );
   }
 }
 
-
- /// Determine the current position of the device.
+/// Determine the current position of the device.
 ///
 /// When the location services are not enabled or permissions
 /// are denied the `Future` will return an error.
