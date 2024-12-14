@@ -72,6 +72,15 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
+                child:const  Column(
+                  children: [
+                    Text(' hi piv nati',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w300
+                    ),)
+                  ],
+                ),
               )
             ],
           ),
