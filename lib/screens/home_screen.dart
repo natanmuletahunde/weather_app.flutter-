@@ -2,9 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:weatherapp/bloc/weather_bloc_bloc.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 // Make sure you have the 'intl' package in your pubspec.yaml
 
 class HomeScreen extends StatelessWidget {
@@ -230,14 +230,14 @@ class HomeScreen extends StatelessWidget {
                                 const Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
+                                     Text(
                                       'Temp Min',
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w300),
                                     ),
                                     SizedBox(height: 3),
-                                    Text(
+                                     Text(
                                       '8°C', // Replace with dynamic value
                                       style: TextStyle(
                                           color: Colors.white,

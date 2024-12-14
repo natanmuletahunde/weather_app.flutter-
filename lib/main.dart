@@ -5,7 +5,6 @@ import 'package:weatherapp/bloc/weather_bloc_bloc.dart';
 import 'package:weatherapp/bloc/weather_bloc_event.dart';
 import 'package:weatherapp/screens/home_screen.dart';
 
-
 void main() {
   runApp(const MainApp());
 }
@@ -16,31 +15,31 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+			debugShowCheckedModeBanner: false,
       home: FutureBuilder(
-        future: _determinePosition(),
+				future: _determinePosition(),
         builder: (context, snap) {
-          if (snap.hasData) {
-            return BlocProvider<WeatherBlocBloc>(
-              create: (context) => WeatherBlocBloc()..add(
-                FetchWeather(snap.data as Position)
-              ),
-              child: const HomeScreen(),
-            );
-          } else {
-            return const Scaffold(
-              body: Center(
-                child: CircularProgressIndicator(),
-              ),
-            );
-          }
-        },
-      ),
+					if(snap.hasData) {
+						return BlocProvider<WeatherBlocBloc>(
+							create: (context) => WeatherBlocBloc()..add(
+								FetchWeather(snap.data as Position)
+							),
+							child: const HomeScreen(),
+						);
+					} else {
+						return const Scaffold(
+							body: Center(
+								child: CircularProgressIndicator(),
+							),
+						);
+					}
+        }
+      )
     );
   }
 }
 
-
+/// Determine the current position of the device.
 ///
 /// When the location services are not enabled or permissions
 /// are denied the `Future` will return an error.
