@@ -18,22 +18,43 @@ class MainApp extends StatelessWidget {
 			debugShowCheckedModeBanner: false,
       home: FutureBuilder(
 				future: _determinePosition(),
-        builder: (context, snap) {
-					if(snap.hasData) {
-						return BlocProvider<WeatherBlocBloc>(
-							create: (context) => WeatherBlocBloc()..add(
-								FetchWeather(snap.data as Position)
-							),
-							child: const HomeScreen(),
-						);
-					} else {
-						return const Scaffold(
-							body: Center(
-								child: CircularProgressIndicator(),
-							),
-						);
-					}
-        }
+     builder: (context, snap) {
+  if (snap.connectionState == ConnectionState.waiting) {
+    // While the Future is still running
+    return const Scaffold(
+      body: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+  } else if (snap.hasError) {
+    // When there's an error in the Future
+    return Scaffold(
+      body: Center(
+        child: Text(
+          'Error: ${snap.error}', // Show the error message
+          style: TextStyle(color: Colors.red),
+        ),
+      ),
+    );
+  } else if (snap.hasData) {
+    // When the Future completes successfully
+    return BlocProvider<WeatherBlocBloc>(
+      create: (context) => WeatherBlocBloc()
+        ..add(
+          FetchWeather(snap.data as Position),
+        ),
+      child: const HomeScreen(),
+    );
+  } else {
+    // Default case (rare but for safety)
+    return const Scaffold(
+      body: Center(
+        child: Text('Unexpected error occurred.'),
+      ),
+    );
+  }
+}
+
       )
     );
   }
