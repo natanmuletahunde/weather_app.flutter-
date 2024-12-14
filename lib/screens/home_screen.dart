@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(40, 1.2 * kToolbarHeight, 40, 20),
+        padding: EdgeInsets.fromLTRB(40, 0.8 * kToolbarHeight, 70, 5), // Reduced the top padding to move content up
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Stack(
@@ -66,8 +66,7 @@ class HomeScreen extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment
-                      .start, // make the column to start from the  the begin of the page
+                  crossAxisAlignment: CrossAxisAlignment.start, // Keep the column start from the top
                   children: [
                     const Text(
                       ' hi piv nati',
@@ -85,7 +84,7 @@ class HomeScreen extends StatelessWidget {
                           fontSize: 25,
                           fontWeight: FontWeight.bold),
                     ),
-                    Image.asset('assets/1.png'),
+                    Image.asset('assets/4.png'),
                     const Center(
                       child: Text(
                         '21°C',
@@ -123,7 +122,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             Image.asset(
                               'assets/11.png',
-                              scale: 8,
+                              scale: 10,
                             ),
                             const SizedBox(
                               width: 5,
@@ -151,7 +150,14 @@ class HomeScreen extends StatelessWidget {
                           ],
                         )
                       ],
-                    )
+                    ),
+                    const Padding(padding: 
+                    EdgeInsets.symmetric(
+                      vertical: 5
+                    ),
+                    child: Divider(
+                      color: Colors.grey,
+                    ),)
                   ],
                 ),
               )
