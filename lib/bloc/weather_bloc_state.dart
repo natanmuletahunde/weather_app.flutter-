@@ -1,5 +1,5 @@
 part of 'weather_bloc_bloc.dart';
-sealed class WeatherBlocState extends Equatable{
+sealed class WeatherBlocState {
   const WeatherBlocState();
 }
 @override

@@ -2,8 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:weather/weather.dart';
 import 'package:geolocator/geolocator.dart';
-
-part 'weather_bloc_event.dart';
+import 'package:weatherapp/bloc/weather_bloc_event.dart';
 part 'weather_bloc_state.dart';
 
 class WeatherBlocBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
