@@ -9,6 +9,11 @@ import 'package:geolocator_platform_interface/src/models/position.dart';
 }
 
 class FetchWeather extends WeatherBlocEvent {
-  FetchWeather(Position data);
+  final Position position;
+
+  const FetchWeather(this.position);
+  @override
+  List<Object> get props => [position];
+
   // Empty class as per your requirements
 }
