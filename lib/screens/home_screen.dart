@@ -11,11 +11,17 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor:Colors.black,
           elevation: 0,
-          systemOverlayStyle: SystemUiOverlayStyle(
+          systemOverlayStyle: const  SystemUiOverlayStyle(
            statusBarBrightness: Brightness.dark, 
           ),
-
-
+        ),
+        body: Padding(padding: EdgeInsets.fromLTRB(
+          40,1.2*kToolbarHeight,40,20
+        ),
+        child:SizedBox(
+          height: MediaQuery.of(context).size.height,
+        ) ,
+        
         ),
     );  
   }
