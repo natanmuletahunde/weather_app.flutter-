@@ -73,24 +73,24 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
-                child:const  Column(
+                child:  Column(
                   crossAxisAlignment: CrossAxisAlignment.start,// make the column to start from the  the begin of the page 
                   children: [
-                    Text(' hi piv nati',
+                   const  Text(' hi piv nati',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Color.fromRGBO(255, 255, 255, 1),
                       fontWeight: FontWeight.w300
                     ),
                     ),
-                  const SizedBox(height: 4,),
-                    Text('Good Morning',
+                 const   SizedBox(height: 4,),
+                   const  Text('Good Morning',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 25,
                       fontWeight: FontWeight.bold
                     ),
                     ),
-
+                    Image.asset('assets/1.png')
                   ],
                 ),
               )
