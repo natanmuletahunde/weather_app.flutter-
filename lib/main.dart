@@ -5,14 +5,6 @@ import 'package:weatherapp/bloc/weather_bloc_bloc.dart';
 import 'package:weatherapp/bloc/weather_bloc_event.dart';
 import 'package:weatherapp/screens/home_screen.dart';
 
-class FetchWeather extends WeatherBlocEvent {
-  final Position position;
-
-  const FetchWeather(this.position);
-
-  @override
-  List<Object> get props => [position];
-}
 
 void main() {
   runApp(const MainApp());
