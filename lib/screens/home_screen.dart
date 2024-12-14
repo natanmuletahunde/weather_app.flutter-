@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor:Colors.black,
       extendBodyBehindAppBar: true,
         appBar: AppBar(
-          backgroundColor:Colors.black,
+          backgroundColor:Colors.transparent,
           elevation: 0,
           systemOverlayStyle: const  SystemUiOverlayStyle(
            statusBarBrightness: Brightness.dark, 
@@ -64,6 +64,7 @@ class HomeScreen extends StatelessWidget {
                 sigmaX: 100.0,sigmaY: 100.0
               ),
               child: Container(
+                
                 decoration: const BoxDecoration(
                   color: Colors.transparent
                 ),
@@ -73,6 +74,7 @@ class HomeScreen extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 child:const  Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,// make the column to start from the  the begin of the page 
                   children: [
                     Text(' hi piv nati',
                     style: TextStyle(
@@ -80,7 +82,7 @@ class HomeScreen extends StatelessWidget {
                       fontWeight: FontWeight.w300
                     ),
                     ),
-                  const SizedBox(height: 8,),
+                  const SizedBox(height: 4,),
                     Text('Good Morning',
                     style: TextStyle(
                       color: Colors.white,
