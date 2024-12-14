@@ -78,7 +78,17 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w300
-                    ),)
+                    ),
+                    ),
+                  const SizedBox(height: 8,),
+                    Text('Good Morning',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold
+                    ),
+                    ),
+
                   ],
                 ),
               )
