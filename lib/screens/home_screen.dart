@@ -103,9 +103,9 @@ class HomeScreen extends StatelessWidget {
                                   fontWeight: FontWeight.w600),
                             ),
                           ),
-                          const Center(
+                          Center(
                             child: Text(
-                              'ThunderStorm',
+                              '${state.weather.weatherMain!}',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 25,
