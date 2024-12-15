@@ -77,9 +77,9 @@ class HomeScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment
                             .start, // Keep the column start from the top
                         children: [
-                           Text(
+                          Text(
                             '${state.weather.areaName}',
-                            style:const  TextStyle(
+                            style: const TextStyle(
                                 color: Color.fromRGBO(255, 255, 255, 1),
                                 fontWeight: FontWeight.w300),
                           ),
@@ -104,19 +104,21 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           Center(
-                            child:Text(
+                            child: Text(
                               '${state.weather.weatherMain!.toUpperCase()}',
-                              style:const TextStyle(
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 25,
                                   fontWeight: FontWeight.w300),
                             ),
                           ),
-                           Center(
+                          Center(
                             child: Text(
-                              DateFormat('EEEE dd.').add_jm().format(state.weather.date!),
+                              DateFormat('EEEE dd.')
+                                  .add_jm()
+                                  .format(state.weather.date!),
                               // 'Friday 16. 09.41am',
-                              style: const  TextStyle(
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w300),
@@ -147,8 +149,10 @@ class HomeScreen extends StatelessWidget {
                                       ),
                                       const SizedBox(height: 3),
                                       Text(
-                                        DateFormat().add_jm().format(DateTime.parse(
-                                            "2024-12-13 05:34:00")), // Replace with dynamic value
+                                        DateFormat()
+                                            .add_jm()
+                                            .format(state.weather.sunrise!),
+                                        // "2024-12-13 05:34:00", // Replace with dynamic value
                                         style: const TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w700),
