@@ -180,8 +180,9 @@ class HomeScreen extends StatelessWidget {
                                       ),
                                       const SizedBox(height: 3),
                                       Text(
-                                        DateFormat().add_jm().format(DateTime.parse(
-                                            "2024-12-13 18:45:00")), // Replace with dynamic value
+                                      DateFormat()
+                                            .add_jm()
+                                            .format(state.weather.sunset!), // Replace with dynamic value
                                         style: const TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w700),
@@ -208,19 +209,19 @@ class HomeScreen extends StatelessWidget {
                                     scale: 8,
                                   ),
                                   const SizedBox(width: 5),
-                                  const Column(
+                                  Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
+                                    const  Text(
                                         'Temp Max',
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w300),
                                       ),
-                                      SizedBox(height: 3),
+                                     const SizedBox(height: 3),
                                       Text(
-                                        '12°C', // Replace with dynamic value
+                                        "${state.weather.tempMax!.celsius!.round().toString()}°C", // Replace with dynamic value
                                         style: const TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w700),
@@ -235,8 +236,8 @@ class HomeScreen extends StatelessWidget {
                                     'assets/14.png',
                                     scale: 8,
                                   ),
-                                  const SizedBox(width: 5),
-                                  const Column(
+                                 SizedBox(width: 5),
+                                 Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
@@ -246,9 +247,9 @@ class HomeScreen extends StatelessWidget {
                                             color: Colors.white,
                                             fontWeight: FontWeight.w300),
                                       ),
-                                      SizedBox(height: 3),
+                                     const  SizedBox(height: 3),
                                       Text(
-                                        '8°C', // Replace with dynamic value
+                             "${state.weather.tempMax!.celsius!.round().toString()}°C", // Replace with dynamic value// Replace with dynamic value
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w700),
