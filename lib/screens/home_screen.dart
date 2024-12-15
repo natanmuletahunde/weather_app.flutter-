@@ -104,9 +104,9 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           Center(
-                            child: Text(
-                              '${state.weather.weatherMain!}',
-                              style: TextStyle(
+                            child:Text(
+                              '${state.weather.weatherMain!.toUpperCase()}',
+                              style:const TextStyle(
                                   color: Colors.white,
                                   fontSize: 25,
                                   fontWeight: FontWeight.w300),
