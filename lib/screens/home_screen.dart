@@ -241,7 +241,7 @@ class HomeScreen extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
+                                     const  Text(
                                         'Temp Min',
                                         style: TextStyle(
                                             color: Colors.white,
@@ -250,7 +250,7 @@ class HomeScreen extends StatelessWidget {
                                      const  SizedBox(height: 3),
                                       Text(
                              "${state.weather.tempMax!.celsius!.round().toString()}°C", // Replace with dynamic value// Replace with dynamic value
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w700),
                                       ),
