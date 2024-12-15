@@ -112,10 +112,11 @@ class HomeScreen extends StatelessWidget {
                                   fontWeight: FontWeight.w300),
                             ),
                           ),
-                          const Center(
+                           Center(
                             child: Text(
-                              'Friday 16. 09.41am',
-                              style: TextStyle(
+                              DateFormat('').format(state.weather.date!),
+                              // 'Friday 16. 09.41am',
+                              style: const  TextStyle(
                                   color: Colors.white,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w300),
