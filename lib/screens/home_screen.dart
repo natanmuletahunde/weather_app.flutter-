@@ -96,7 +96,7 @@ class HomeScreen extends StatelessWidget {
                           Image.asset('assets/4.png'),
                           Center(
                             child: Text(
-                              '${state.weather.temperature}°C',
+                              '${state.weather.temperature!.celsius!.round()}°C',
                               style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 55,
